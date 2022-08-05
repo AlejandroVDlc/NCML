@@ -1,0 +1,24 @@
+ack = GAparams;
+ack.visual.type = 'mesh';
+ack.visual.bounds = [-2, 2];
+ack.visual.interval = 0.05;
+ack.visual.type = "surf"
+ack.mutate.decay= 'linear'
+ack.mutate.proportional = true
+
+ga_visual_ackley([],[],[],[],[],[],ack.visual,[],[]);
+ack.stop.direction = 'min';
+ack.visual.func = 'ackley';
+ack.visual.active = true;
+[best, fit, stat] = GAsolver(20, [-32, 32], ...
+'ackley', 200, 250, ack);
+
+
+crossover operation,
+mutation decay (setting the mutate.decay parameter to ‘none’,
+‘linear’, or ‘exponential’.)
+mutate.proportional to true or false.
+replace.comparative to true/False
+ weight parameter, = weights to each aprent // using BLX 
+
+ack.crossover.weight = [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1, ]
